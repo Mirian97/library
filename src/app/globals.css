@@ -13,15 +13,15 @@ body {
 }
 
 .header {
-  @apply bg-primary-500 h-[88px] sm:h-[96px] w-full sticky top-0 transition-all duration-300 ease-in-out;
+  @apply bg-primary-500 h-[80px] w-full sticky top-0 transition-all duration-300 ease-in-out;
 }
 
 .header.show {
-  @apply h-[154px] sm:h-[162px];
+  @apply h-[148px];
 }
 
 .main-container {
-  @apply max-w-screen-lg m-auto flex flex-col justify-center gap-4 px-5 py-4 sm:px-10 sm:py-5;
+  @apply max-w-screen-lg m-auto flex flex-col justify-center gap-4 px-5 py-3 sm:px-10;
 }
 
 .input {
