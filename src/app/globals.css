@@ -2,22 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+  @apply bg-secondary-300 min-h-screen w-full;
+}
+
+.header {
+  @apply bg-primary-500 h-[88px] sm:h-[96px] w-full sticky top-0 transition-all duration-300 ease-in-out;
+}
+
+.header.show {
+  @apply h-[154px] sm:h-[162px];
+}
+
+.main-container {
+  @apply max-w-screen-lg m-auto flex flex-col justify-center gap-4 px-5 py-4 sm:px-10 sm:py-5;
+}
+
+.input {
+  @apply w-full sm:w-96 px-4 py-3 rounded-full border-2 focus:border-primary-200 focus:outline-none;
+}
+
+.input[type='search']::-webkit-search-cancel-button {
+  @apply cursor-pointer opacity-40;
 }
