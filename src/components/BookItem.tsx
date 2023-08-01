@@ -14,7 +14,7 @@ const BookItem = () => {
             style={{ backgroundImage: `url(${book.image})` }}
           />
           <p className='text-sm'>Título: {book.title}</p>
-          <p className='text-sm'> Autor(es): {book.authors}</p>
+          <p className='text-sm'>Autor(es): {book.authors}</p>
         </div>
         <div className='book-item-back'>
           <p className='text-lg font-bold'>Veja mais</p>

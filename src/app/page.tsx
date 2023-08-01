@@ -1,9 +1,10 @@
 import BookItem from '@/components/BookItem'
+import Title from '@/components/Title'
 
 const Home = () => {
   return (
     <div className='pt-3'>
-      <h2 className='font-bold text-3xl text-primary-500 text-center'>Seção de livros</h2>
+      <Title>Seção de livros</Title>
       <div className='flex flex-wrap justify-evenly gap-6 mt-5'>
         <BookItem />
       </div>
