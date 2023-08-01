@@ -51,7 +51,7 @@ body {
 .book-item-back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  @apply rounded-2xl absolute flex flex-col justify-center w-full h-full;
+  @apply rounded-2xl absolute flex flex-col justify-center w-full h-full shadow-100;
 }
 
 .book-item-front {
@@ -60,4 +60,9 @@ body {
 
 .book-item-back {
   @apply bg-primary-500;
+}
+
+.title {
+  text-shadow: 2px 2px 4px rgba(189, 181, 181, 1);
+  @apply font-bold text-3xl text-primary-500 text-center animate-text-expand;
 }
