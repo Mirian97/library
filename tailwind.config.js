@@ -15,11 +15,15 @@ module.exports = {
       colors: {
         primary: {
           200: '#5ec5d5',
-          500: '#468189'
+          500: '#468189',
+          800: '#031926'
         },
         secondary: {
           300: '#F4E9CD'
         }
+      },
+      boxShadow: {
+        100: '0 8px 14px 0 rgba(0, 0, 0, 0.2)'
       }
     }
   },
