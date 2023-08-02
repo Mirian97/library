@@ -10,18 +10,22 @@ import Input from './Input'
 
 const Header = () => {
   const { showSearchInput, toggleSearchInput, closeSearchInput } = useGlobal()
+  const [isHome, setIsHome] = useState(false)
+  const pathname = usePathname()
   const iconButtonProps = {
     className: 'cursor-pointer',
     color: 'white',
     size: 28,
     onClick: toggleSearchInput
   }
-  const pathname = usePathname()
-  const [isHome, setIsHome] = useState(false)
+  const headerIcon = showSearchInput ? (
+    <X {...iconButtonProps} />
+  ) : (
+    <Search {...iconButtonProps} />
+  )
   useEffect(() => {
     setIsHome(pathname === '/livros')
   }, [pathname])
-
   useEffect(() => {
     !isHome && closeSearchInput()
   }, [isHome])
@@ -29,23 +33,15 @@ const Header = () => {
   return (
     <header className={`header ${showSearchInput && 'show'}`}>
       <div className='main-container'>
-        <Link href='/livros' className='flex items-center justify-between'>
-          <div className='flex items-center'>
+        <div className='flex items-center justify-between'>
+          <Link href='/livros' className='flex items-center'>
             <Image src='/svg/books.svg' width={52} height={52} alt='Logo' />
             <span className='text-xl text-white font-bold max-w-[150px]'>
               Livros Conectados
             </span>
-          </div>
-          {isHome ? (
-            showSearchInput ? (
-              <X {...iconButtonProps} />
-            ) : (
-              <Search {...iconButtonProps} />
-            )
-          ) : (
-            ''
-          )}
-        </Link>
+          </Link>
+          {isHome ? headerIcon : ''}
+        </div>
         {showSearchInput && (
           <Input type='search' placeholder='Buscar por livro...' className='m-auto' />
         )}
