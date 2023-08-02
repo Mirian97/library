@@ -3,6 +3,8 @@ import { GlobalProvider } from '@/contexts/GlobalContext'
 import IChildren from '@/interfaces/IChildren'
 import type { Metadata } from 'next'
 import { MuseoModerno } from 'next/font/google'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
 const museoModerno = MuseoModerno({
@@ -22,6 +24,7 @@ const RootLayout = ({ children }: IChildren) => (
   <html lang='pt-br'>
     <body className={museoModerno.className}>
       <GlobalProvider>
+        <ToastContainer />
         <Header />
         <div className='main-container'>{children}</div>
       </GlobalProvider>

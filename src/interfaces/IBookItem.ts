@@ -1,0 +1,83 @@
+interface IEpub {
+  isAvailable: boolean
+}
+
+interface IPdf {
+  isAvailable: boolean
+}
+
+interface ISearchInfo {
+  textSnippet: string
+}
+
+interface ISaleInfo {
+  country: string
+  saleability: string
+  isEbook: boolean
+}
+
+interface IAccessInfo {
+  country: string
+  viewability: string
+  embeddable: boolean
+  publicDomain: boolean
+  textToSpeechPermission: string
+  epub: IEpub
+  pdf: IPdf
+  webReaderLink: string
+  accessViewStatus: string
+  quoteSharingAllowed: boolean
+}
+
+interface IReadingModes {
+  text: boolean
+  image: boolean
+}
+
+interface IPanelizationSummary {
+  containsEpubBubbles: boolean
+  containsImageBubbles: boolean
+}
+
+interface IImageLinks {
+  smallThumbnail: string
+  thumbnail: string
+}
+
+interface IIndustryIdentifiers {
+  type: string
+  identifier: string
+}
+
+interface IVolumeInfo {
+  title: string
+  authors: string[]
+  publishedDate: string
+  industryIdentifiers: IIndustryIdentifiers[]
+  readingModes: IReadingModes
+  pageCount: number
+  printType: string
+  categories: string[]
+  maturityRating: string
+  allowAnonLogging: boolean
+  contentVersion: string
+  panelizationSummary: IPanelizationSummary
+  imageLinks: IImageLinks
+  language: string
+  previewLink: string
+  infoLink: string
+  canonicalVolumeLink: string
+}
+
+interface IBookItem {
+  kind: string
+  id: string
+  etag: string
+  selfLink: string
+  volumeInfo: IVolumeInfo
+  saleInfo: ISaleInfo
+  accessInfo: IAccessInfo
+  searchInfo: ISearchInfo
+}
+
+export default IBookItem
