@@ -7,6 +7,7 @@ import { createContext } from 'react'
 interface IGlobalContextData {
   showSearchInput: boolean
   toggleSearchInput: () => void
+  closeSearchInput: () => void
   books: IBook
   isLoadingBooks: boolean
 }

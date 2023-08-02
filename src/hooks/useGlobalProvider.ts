@@ -10,6 +10,7 @@ const useGlobalContextProvider = () => {
   const [books, setBooks] = useState<IBook>(defaultBooks)
   const [isLoadingBooks, setIsLoadingBooks] = useState(true)
   const toggleSearchInput = () => setShowSearchInput(!showSearchInput)
+  const closeSearchInput = () => setShowSearchInput(false)
 
   const handleGetBooks = async () => {
     setIsLoadingBooks(true)
@@ -30,6 +31,7 @@ const useGlobalContextProvider = () => {
   return {
     showSearchInput,
     toggleSearchInput,
+    closeSearchInput,
     books,
     isLoadingBooks
   }
