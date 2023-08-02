@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-  @apply bg-primary-500 h-[80px] w-full sticky top-0 z-10 transition-all duration-300 ease-in-out;
+  @apply bg-header h-[80px] w-full sticky top-0 z-10 transition-all duration-300 ease-in-out;
 }
 
 .header.show {
@@ -64,5 +64,5 @@ body {
 
 .title {
   text-shadow: 2px 2px 4px rgba(189, 181, 181, 1);
-  @apply font-bold text-3xl text-primary-500 text-center animate-text-expand;
+  @apply font-bold text-2xl sm:text-3xl text-primary-500 text-center animate-text-expand;
 }

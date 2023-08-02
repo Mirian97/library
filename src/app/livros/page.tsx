@@ -1,7 +1,7 @@
 import { BookList } from '@/components/BookList'
 import Title from '@/components/Title'
 
-const Livros = () => {
+const Home = () => {
   return (
     <div className='pt-4'>
       <Title>Seção de livros</Title>
@@ -10,4 +10,4 @@ const Livros = () => {
   )
 }
 
-export default Livros
+export default Home

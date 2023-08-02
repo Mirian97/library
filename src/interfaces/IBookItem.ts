@@ -14,6 +14,14 @@ interface ISaleInfo {
   country: string
   saleability: string
   isEbook: boolean
+  listPrice: {
+    amount: number
+    currencyCode: string
+  }
+  retailPrice: {
+    amount: number
+    currencyCode: string
+  }
 }
 
 interface IAccessInfo {
@@ -52,6 +60,8 @@ interface IIndustryIdentifiers {
 interface IVolumeInfo {
   title: string
   authors: string[]
+  publisher: string
+  description: string
   publishedDate: string
   industryIdentifiers: IIndustryIdentifiers[]
   readingModes: IReadingModes

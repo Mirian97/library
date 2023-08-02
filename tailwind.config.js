@@ -12,6 +12,17 @@ module.exports = {
         md: '1024px',
         lg: '1440px'
       },
+      backgroundImage: {
+        header:
+          'linear-gradient( \
+          to bottom, \
+          #468189, \
+          #498b95, \
+          #4d95a1, \
+          #50a0ad, \
+          #53aaba \
+        )'
+      },
       colors: {
         primary: {
           200: '#5ec5d5',
