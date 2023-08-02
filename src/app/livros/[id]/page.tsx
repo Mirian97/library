@@ -45,7 +45,7 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
     { id: 2, name: 'Editora', description: publisher },
     {
       id: 3,
-      name: 'Autores',
+      name: 'Autor(es)',
       description: authors.join(', ')
     },
     {
@@ -67,7 +67,7 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
           width={250}
           height={500}
           alt='Imagem da capa do livro'
-          className='m-auto sm:m-0'
+          className='m-auto sm:m-0 rounded-xl drop-shadow-xl'
         />
         <div className='flex flex-col gap-2'>
           {detailList.map((item) => (
