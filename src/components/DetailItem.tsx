@@ -5,7 +5,7 @@ interface IDetailItem {
 
 const DetailItem = ({ name, description }: IDetailItem) => {
   return (
-    <div>
+    <div className='text-justify'>
       <span className='text-primary-800 font-bold'>{name}: </span>
       <span className='text-gray-600'>{description}</span>
     </div>
