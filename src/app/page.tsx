@@ -1,13 +1,11 @@
-import BookItem from '@/components/BookItem'
+import { BookList } from '@/components/BookList'
 import Title from '@/components/Title'
 
 const Home = () => {
   return (
-    <div className='pt-3'>
+    <div className='pt-4'>
       <Title>Seção de livros</Title>
-      <div className='flex flex-wrap justify-evenly gap-6 mt-5'>
-        <BookItem />
-      </div>
+      <BookList />
     </div>
   )
 }
