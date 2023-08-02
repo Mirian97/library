@@ -1,5 +1,5 @@
-import useGlobal from '@/hooks/useGlobal'
 import IBookItem from '@/interfaces/IBookItem'
+import Link from 'next/link'
 
 const BookItem = ({ id, volumeInfo }: IBookItem) => {
   const {
@@ -7,10 +7,8 @@ const BookItem = ({ id, volumeInfo }: IBookItem) => {
     authors,
     imageLinks: { thumbnail }
   } = volumeInfo
-  const { handleGetOneBook } = useGlobal()
-
   return (
-    <div className='book-item' onClick={() => handleGetOneBook(id)}>
+    <Link href={`livros/${id}`} className='book-item'>
       <div className='book-item-wrap'>
         <div className='book-item-front'>
           <div
@@ -24,7 +22,7 @@ const BookItem = ({ id, volumeInfo }: IBookItem) => {
           <p className='text-lg font-bold'>Veja mais</p>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
