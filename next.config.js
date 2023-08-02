@@ -8,6 +8,9 @@ const nextConfig = {
         permanent: true
       }
     ]
+  },
+  images: {
+    domains: ['books.google.com']
   }
 }
 
