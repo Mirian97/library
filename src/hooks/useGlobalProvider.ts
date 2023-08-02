@@ -1,15 +1,13 @@
 'use client'
-import { defaultBookItem, defaultBooks } from '@/constants/book'
+import { defaultBooks } from '@/constants/book'
 import IBook from '@/interfaces/IBook'
-import IBookItem from '@/interfaces/IBookItem'
-import { getBooks, getOneBook } from '@/services/book'
+import { getBooks } from '@/services/book'
 import { messageError } from '@/utils/toast'
 import { useEffect, useState } from 'react'
 
 const useGlobalContextProvider = () => {
   const [showSearchInput, setShowSearchInput] = useState(false)
   const [books, setBooks] = useState<IBook>(defaultBooks)
-  const [activeBook, setActiveBook] = useState<IBookItem>(defaultBookItem)
   const [isLoadingBooks, setIsLoadingBooks] = useState(true)
   const toggleSearchInput = () => setShowSearchInput(!showSearchInput)
 
@@ -25,15 +23,6 @@ const useGlobalContextProvider = () => {
     }
   }
 
-  const handleGetOneBook = async (bookId: string) => {
-    try {
-      const response = await getOneBook(bookId)
-      setActiveBook(response)
-    } catch (error) {
-      messageError('Não foi possível carregar os dados do livro')
-    }
-  }
-
   useEffect(() => {
     handleGetBooks()
   }, [])
@@ -42,8 +31,7 @@ const useGlobalContextProvider = () => {
     showSearchInput,
     toggleSearchInput,
     books,
-    isLoadingBooks,
-    handleGetOneBook
+    isLoadingBooks
   }
 }
 

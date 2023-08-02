@@ -9,7 +9,6 @@ interface IGlobalContextData {
   toggleSearchInput: () => void
   books: IBook
   isLoadingBooks: boolean
-  handleGetOneBook: (bookId: string) => Promise<void>
 }
 
 const GlobalContext = createContext<IGlobalContextData>({} as IGlobalContextData)
