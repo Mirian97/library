@@ -47,7 +47,7 @@ interface IPanelizationSummary {
   containsImageBubbles: boolean
 }
 
-interface IImageLinks {
+export interface IImageLinks {
   smallThumbnail: string
   thumbnail: string
 }
