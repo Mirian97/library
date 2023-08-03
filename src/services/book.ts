@@ -1,8 +1,9 @@
 import api from './api'
 const apiKey = process.env.NEXT_PUBLIC_BOOKS_API_KEY
 
-export const getBooks = async () => {
-  const { data } = await api.get(`/volumes?apiKey=${apiKey}&q=''`)
+export const getBooks = async (searchTerm?: string) => {
+  searchTerm = searchTerm || '%27%27'
+  const { data } = await api.get(`/volumes?apiKey=${apiKey}&q=${searchTerm}`)
   return data
 }
 
