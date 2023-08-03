@@ -2,7 +2,7 @@
 import useGlobalProvider from '@/hooks/useGlobalProvider'
 import IBook from '@/interfaces/IBook'
 import IChildren from '@/interfaces/IChildren'
-import { createContext } from 'react'
+import { createContext, Dispatch, SetStateAction } from 'react'
 
 interface IGlobalContextData {
   showSearchInput: boolean
@@ -10,6 +10,8 @@ interface IGlobalContextData {
   closeSearchInput: () => void
   books: IBook
   isLoadingBooks: boolean
+  setSearchInputValue: Dispatch<SetStateAction<string>>
+  searchInputValue: string
 }
 
 const GlobalContext = createContext<IGlobalContextData>({} as IGlobalContextData)
