@@ -66,3 +66,15 @@ body {
   text-shadow: 2px 2px 4px rgba(189, 181, 181, 1);
   @apply font-bold text-2xl sm:text-3xl text-primary-500 text-center animate-text-expand;
 }
+
+.button {
+  @apply rounded-full text-white p-3 transition-all duration-300 ease-in-out;
+}
+
+.contained-button {
+  @apply bg-primary-500 hover:bg-primary-600;
+}
+
+.plain-button {
+  @apply bg-transparent hover:bg-primary-900;
+}
