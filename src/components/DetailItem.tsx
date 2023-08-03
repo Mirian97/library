@@ -1,6 +1,7 @@
 interface IDetailItem {
+  key?: number
   name: string
-  description: string
+  description?: string
 }
 
 const DetailItem = ({ name, description }: IDetailItem) => {
