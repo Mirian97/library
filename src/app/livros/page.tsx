@@ -1,5 +1,6 @@
-import { BookList } from '@/components/BookList'
+import BookList from '@/components/BookList'
 import Title from '@/components/Title'
+import { memo } from 'react'
 
 const Home = () => {
   return (
@@ -10,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home)
