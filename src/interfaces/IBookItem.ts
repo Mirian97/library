@@ -59,7 +59,7 @@ interface IIndustryIdentifiers {
 
 interface IVolumeInfo {
   title: string
-  authors: string[]
+  authors?: string[]
   publisher: string
   description: string
   publishedDate: string
