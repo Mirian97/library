@@ -17,3 +17,5 @@ export const formatDate = (day: string) => {
 
 export const formatBRLMoney = (value: number) =>
   value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+
+export const formatArrayToString = (array?: string[]) => array?.join(', ')
