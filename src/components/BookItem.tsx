@@ -1,5 +1,6 @@
 import IBookItem from '@/interfaces/IBookItem'
 import Link from 'next/link'
+import { memo } from 'react'
 
 const BookItem = ({ id, volumeInfo }: IBookItem) => {
   const {
@@ -16,7 +17,7 @@ const BookItem = ({ id, volumeInfo }: IBookItem) => {
             style={{ backgroundImage: `url(${thumbnail})` }}
           />
           <p className='text-sm'>Título: {title}</p>
-          <p className='text-sm'>Autor(es): {authors.join(', ')}</p>
+          <p className='text-sm'>Autor(es): {authors?.join(', ')}</p>
         </div>
         <div className='book-item-back'>
           <p className='text-lg font-bold'>Veja mais</p>
@@ -26,4 +27,4 @@ const BookItem = ({ id, volumeInfo }: IBookItem) => {
   )
 }
 
-export default BookItem
+export default memo(BookItem)
