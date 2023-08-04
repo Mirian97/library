@@ -47,7 +47,7 @@ interface IPanelizationSummary {
   containsImageBubbles: boolean
 }
 
-interface IImageLinks {
+export interface IImageLinks {
   smallThumbnail: string
   thumbnail: string
 }
@@ -59,7 +59,7 @@ interface IIndustryIdentifiers {
 
 interface IVolumeInfo {
   title: string
-  authors: string[]
+  authors?: string[]
   publisher: string
   description: string
   publishedDate: string

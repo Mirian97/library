@@ -48,6 +48,10 @@ export const defaultBookItem = {
     listPrice: {
       amount: 0,
       currencyCode: ''
+    },
+    retailPrice: {
+      amount: 0,
+      currencyCode: ''
     }
   },
   accessInfo: {

@@ -6,29 +6,30 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import Button from './Button'
 import Input from './Input'
 
 const Header = () => {
-  const { showSearchInput, toggleSearchInput, closeSearchInput } = useGlobal()
+  const { onChangeSearchInput } = useGlobal()
+  const [showSearchInput, setShowSearchInput] = useState(false)
+  const toggleSearchInput = () => setShowSearchInput(!showSearchInput)
+  const closeSearchInput = () => setShowSearchInput(false)
   const [isHome, setIsHome] = useState(false)
   const pathname = usePathname()
-  const iconButtonProps = {
-    className: 'cursor-pointer',
-    color: 'white',
-    size: 28,
-    onClick: toggleSearchInput
-  }
-  const headerIcon = showSearchInput ? (
-    <X {...iconButtonProps} />
-  ) : (
-    <Search {...iconButtonProps} />
-  )
+  const iconButtonProps = { className: 'cursor-pointer', color: 'white', size: 28 }
+
   useEffect(() => {
     setIsHome(pathname === '/livros')
   }, [pathname])
   useEffect(() => {
     !isHome && closeSearchInput()
   }, [isHome])
+
+  const renderIconButton = () => (
+    <Button onClick={toggleSearchInput} variant='plain'>
+      {showSearchInput ? <X {...iconButtonProps} /> : <Search {...iconButtonProps} />}
+    </Button>
+  )
 
   return (
     <header className={`header ${showSearchInput && 'show'}`}>
@@ -40,11 +41,15 @@ const Header = () => {
               Livros Conectados
             </span>
           </Link>
-          {isHome ? headerIcon : ''}
+          {isHome ? renderIconButton() : ''}
         </div>
-        {showSearchInput && (
-          <Input type='search' placeholder='Buscar por livro...' className='m-auto' />
-        )}
+        <Input
+          type='search'
+          id='search'
+          placeholder='Buscar por livro...'
+          className={`m-auto ${showSearchInput ? 'flex' : ' hidden'}`}
+          onChange={onChangeSearchInput}
+        />
       </div>
     </header>
   )
