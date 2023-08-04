@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Button from '@/components/Button'
 import DetailItem from '@/components/DetailItem'
 import Title from '@/components/Title'
@@ -13,7 +14,6 @@ import {
 import { getBookImage } from '@/utils/functions'
 import { messageError } from '@/utils/toast'
 import { ChevronLeftCircle } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const handleGetOneBook = async (bookId: string) => {
@@ -55,12 +55,10 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
       </Button>
       <Title className='mb-4 mx-11'>{title}</Title>
       <div className='grid grid-rows-[auto_1fr] gap-4 sm:grid-cols-[auto_1fr]'>
-        <Image
+        <img
           src={bookImage}
-          width={250}
-          height={500}
           alt='Imagem da capa do livro'
-          className='m-auto sm:m-0 rounded-xl drop-shadow-xl'
+          className='m-auto sm:m-0 w-[250px] rounded-xl drop-shadow-xl'
         />
         <div className='flex flex-col gap-2'>
           {detailList.map((item) => (
