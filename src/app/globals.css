@@ -25,7 +25,7 @@ body {
 }
 
 .input {
-  @apply w-full sm:w-96 px-4 py-3 rounded-full border-2 focus:border-primary-200 focus:outline-none;
+  @apply w-full sm:w-96 px-4 py-3 rounded-full border-2 focus:border-primary-200 focus:outline-none transition-all duration-300 ease-in-out;
 }
 
 .input[type='search']::-webkit-search-cancel-button {
