@@ -19,7 +19,7 @@ NEXT_PUBLIC_BOOKS_API_KEY="AIzaSyBa5TrrFRP6zbasruECjSdmU0McCMEzHgM"
 
 No terminal, execute o comando npm run dev e pronto! O site estará funcionando na url: http://localhost:3000.
 
-Lembrando que é possível acessar o deploy da aplicação na seguinte url: https://library-hqbdi0zkh-mirian97.vercel.app/livros
+Lembrando que é possível acessar o deploy da aplicação na seguinte url: https://library-mirian97.vercel.app/livros
 
 ## ⚒️ Tecnologias utilizadas
 
