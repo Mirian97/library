@@ -33,22 +33,20 @@ const BookList = () => {
   }, [searchDebounced])
 
   return (
-    <div className='flex flex-col items-center mt-4'>
-      <div className='flex flex-wrap justify-evenly gap-6 mt-5'>
-        {isLoadingBooks ? (
-          <Image
-            src='/svg/loading.svg'
-            alt='Carregando...'
-            width={80}
-            height={80}
-            className='mt-5'
-          />
-        ) : books.totalItems ? (
-          books.items.map((book) => <BookItem key={book.id} {...book} />)
-        ) : (
-          <h5 className='text-lg'>Não há livros para o termo pesquisado</h5>
-        )}
-      </div>
+    <div className='flex flex-wrap justify-center gap-6 mt-7'>
+      {isLoadingBooks ? (
+        <Image
+          src='/svg/loading.svg'
+          alt='Carregando...'
+          width={80}
+          height={80}
+          className='mt-5'
+        />
+      ) : books.totalItems ? (
+        books.items.map((book) => <BookItem key={book.id} {...book} />)
+      ) : (
+        <h5 className='text-lg'>Não há livros para o termo pesquisado</h5>
+      )}
     </div>
   )
 }
