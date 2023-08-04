@@ -47,7 +47,7 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
   ]
 
   return (
-    <div className='py-4 relative'>
+    <div className='pt-5 pb-10 relative'>
       <Button variant='plain' className='absolute top-1 z-[1]'>
         <Link href='/livros'>
           <ChevronLeftCircle color='#468189' size={36} />
