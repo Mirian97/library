@@ -1,17 +1,11 @@
 'use client'
 import useGlobalProvider from '@/hooks/useGlobalProvider'
-import IBook from '@/interfaces/IBook'
 import IChildren from '@/interfaces/IChildren'
-import { createContext, Dispatch, SetStateAction } from 'react'
+import { ChangeEvent, createContext } from 'react'
 
 interface IGlobalContextData {
-  showSearchInput: boolean
-  toggleSearchInput: () => void
-  closeSearchInput: () => void
-  books: IBook
-  isLoadingBooks: boolean
-  setSearchInputValue: Dispatch<SetStateAction<string>>
   searchInputValue: string
+  onChangeSearchInput: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 const GlobalContext = createContext<IGlobalContextData>({} as IGlobalContextData)
