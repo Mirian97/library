@@ -1,5 +1,5 @@
 import IBookItem from '@/interfaces/IBookItem'
-import { formatArrayToString } from '@/utils/formatters'
+import { formatArrayToString, formatString } from '@/utils/formatters'
 import { getBookImage } from '@/utils/functions'
 import Link from 'next/link'
 import { memo } from 'react'
@@ -15,7 +15,7 @@ const BookItem = ({ id, volumeInfo }: IBookItem) => {
             className='w-full h-full rounded-t-2xl bg-cover'
             style={{ backgroundImage: `url(${bookImage})` }}
           />
-          <p className='text-sm'>Título: {title}</p>
+          <p className='text-sm'>Título: {formatString(title, 80)}</p>
           {authors && (
             <p className='text-sm'>Autor(es): {formatArrayToString(authors, 40)}</p>
           )}
