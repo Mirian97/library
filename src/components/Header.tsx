@@ -43,14 +43,13 @@ const Header = () => {
           </Link>
           {isHome ? renderIconButton() : ''}
         </div>
-        {showSearchInput && (
-          <Input
-            type='search'
-            placeholder='Buscar por livro...'
-            className='m-auto'
-            onChange={onChangeSearchInput}
-          />
-        )}
+        <Input
+          type='search'
+          id='search'
+          placeholder='Buscar por livro...'
+          className={`m-auto ${showSearchInput ? 'flex' : ' hidden'}`}
+          onChange={onChangeSearchInput}
+        />
       </div>
     </header>
   )
