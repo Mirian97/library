@@ -4,7 +4,7 @@ import { memo } from 'react'
 
 const Home = () => {
   return (
-    <div className='pt-4'>
+    <div className='pt-5 pb-10'>
       <Title>Seção de livros</Title>
       <BookList />
     </div>
