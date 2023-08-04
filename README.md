@@ -21,7 +21,7 @@ No terminal, execute o comando npm run dev e pronto! O site estará funcionando 
 
 Lembrando que é possível acessar o deploy da aplicação na seguinte url: https://library-hqbdi0zkh-mirian97.vercel.app/livros
 
-## 🛠️ Tecnologias utilizadas
+## ⚒️ Tecnologias utilizadas
 
 - React
 - Typescript
