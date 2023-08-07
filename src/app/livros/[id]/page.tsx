@@ -58,7 +58,7 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
         <img
           src={bookImage}
           alt='Imagem da capa do livro'
-          className='m-auto sm:m-0 w-[250px] rounded-xl drop-shadow-xl'
+          className='m-auto sm:m-0 w-[250px] max-h-[380px] rounded-xl drop-shadow-xl'
         />
         <div className='flex flex-col gap-2'>
           {detailList.map((item) => (
