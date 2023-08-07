@@ -29,7 +29,7 @@ const BookList = () => {
   }
 
   useEffect(() => {
-    searchDebounced ? handleGetBooks() : handleGetBooks()
+    handleGetBooks()
   }, [searchDebounced])
 
   return (
