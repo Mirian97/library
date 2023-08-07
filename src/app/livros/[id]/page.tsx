@@ -21,7 +21,7 @@ const handleGetOneBook = async (bookId: string) => {
     const response = await getOneBook(bookId)
     return response
   } catch (error) {
-    messageError('Não foi possível carregar os dados do livros')
+    messageError('Não foi possível carregar os dados do livro')
   }
 }
 
