@@ -41,7 +41,7 @@ const Header = () => {
               Livros Conectados
             </span>
           </Link>
-          {isHome ? renderIconButton() : ''}
+          {isHome && renderIconButton()}
         </div>
         <Input
           type='search'
