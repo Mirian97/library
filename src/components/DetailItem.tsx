@@ -1,5 +1,4 @@
 interface IDetailItem {
-  key?: number
   name: string
   description?: string
 }
