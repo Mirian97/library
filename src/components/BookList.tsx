@@ -6,9 +6,9 @@ import useGlobal from '@/hooks/useGlobal'
 import IBook from '@/interfaces/IBook'
 import { getBooks } from '@/services/book'
 import { messageError } from '@/utils/toast'
-import Image from 'next/image'
 import { memo, useEffect, useState } from 'react'
 import BookItem from './BookItem'
+import Loading from './Loading'
 
 const BookList = () => {
   const { searchInputValue } = useGlobal()
@@ -35,13 +35,7 @@ const BookList = () => {
   return (
     <div className='flex flex-wrap justify-center gap-6 mt-7'>
       {isLoadingBooks ? (
-        <Image
-          src='/svg/loading.svg'
-          alt='Carregando...'
-          width={80}
-          height={80}
-          className='mt-5'
-        />
+        <Loading className='mt-5' />
       ) : books.totalItems ? (
         books.items.map((book) => <BookItem key={book.id} {...book} />)
       ) : (

@@ -1,8 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
+'use client'
 import Button from '@/components/Button'
 import DetailItem from '@/components/DetailItem'
+import Loading from '@/components/Loading'
 import Title from '@/components/Title'
-import IBookItem from '@/interfaces/IBookItem'
+import { defaultBookItem } from '@/constants/book'
 import IDetailBook from '@/interfaces/IDetailBook'
 import { getOneBook } from '@/services/book'
 import {
@@ -14,19 +17,14 @@ import {
 import { getBookImage } from '@/utils/functions'
 import { messageError } from '@/utils/toast'
 import { ChevronLeftCircle } from 'lucide-react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-const handleGetOneBook = async (bookId: string) => {
-  try {
-    const response = await getOneBook(bookId)
-    return response
-  } catch (error) {
-    messageError('Não foi possível carregar os dados do livro')
-  }
-}
-
-const DetailBook = async ({ params: { id } }: IDetailBook) => {
-  const book: IBookItem = await handleGetOneBook(id)
+const DetailBook = ({ params: { id } }: IDetailBook) => {
+  const [book, setBook] = useState(defaultBookItem)
+  const [isLoadingBook, setIsLoadingBook] = useState(true)
+  const router = useRouter()
+  const navigateToHome = () => router.back()
   const {
     volumeInfo: { title, publishedDate, publisher, description, authors, imageLinks },
     saleInfo: { saleability, retailPrice }
@@ -46,26 +44,43 @@ const DetailBook = async ({ params: { id } }: IDetailBook) => {
     { id: 5, name: 'Preço', description: formatBRLMoney(retailPrice?.amount) }
   ]
 
+  useEffect(() => {
+    const handleGetOneBook = async (bookId: string) => {
+      setIsLoadingBook(true)
+      try {
+        const response = await getOneBook(bookId)
+        setBook(response)
+      } catch (error) {
+        messageError('Não foi possível carregar os dados do livro')
+      } finally {
+        setIsLoadingBook(false)
+      }
+    }
+    handleGetOneBook(id)
+  }, [])
+
   return (
     <div className='pt-5 pb-10 relative'>
-      <Button variant='plain' className='absolute top-1 z-[1]'>
-        <Link href='/livros'>
-          <ChevronLeftCircle color='#468189' size={36} />
-        </Link>
+      <Button variant='plain' className='absolute top-1 z-[1]' onClick={navigateToHome}>
+        <ChevronLeftCircle color='#468189' size={36} />
       </Button>
       <Title className='mb-4 mx-11'>{title}</Title>
-      <div className='grid grid-rows-[auto_1fr] gap-4 sm:grid-cols-[auto_1fr]'>
-        <img
-          src={bookImage}
-          alt='Imagem da capa do livro'
-          className='m-auto sm:m-0 w-[250px] max-h-[380px] rounded-xl drop-shadow-xl'
-        />
-        <div className='flex flex-col gap-2'>
-          {detailList.map((item) => (
-            <DetailItem key={item.id} {...item} />
-          ))}
+      {isLoadingBook ? (
+        <Loading className='mt-16 mx-auto' />
+      ) : (
+        <div className='grid grid-rows-[auto_1fr] gap-4 sm:grid-cols-[auto_1fr]'>
+          <img
+            src={bookImage}
+            alt='Imagem da capa do livro'
+            className='m-auto sm:m-0 w-[250px] max-h-[380px] rounded-xl drop-shadow-xl'
+          />
+          <div className='flex flex-col gap-2'>
+            {detailList.map((item) => (
+              <DetailItem key={item.id} {...item} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
