@@ -2,9 +2,8 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import Title from './Title'
 
-const renderTitle = () => {
-  return render(<Title />)
-}
+const renderTitle = () => render(<Title />)
+
 describe('Title', () => {
   it('should render Title correctly', () => {
     const { getByRole } = renderTitle()
