@@ -4,7 +4,7 @@
 import Button from '@/components/Button'
 import DetailItem from '@/components/DetailItem'
 import Loading from '@/components/Loading'
-import Title from '@/components/Title'
+import Title from '@/components/Title/Title'
 import { defaultBookItem } from '@/constants/book'
 import IDetailBook from '@/interfaces/IDetailBook'
 import { getOneBook } from '@/services/book'
