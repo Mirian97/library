@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Header from '@/components/Header/Header'
 import { GlobalProvider } from '@/contexts/GlobalContext'
 import IChildren from '@/interfaces/IChildren'
 import type { Metadata } from 'next'
