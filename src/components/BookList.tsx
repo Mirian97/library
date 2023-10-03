@@ -8,7 +8,7 @@ import { getBooks } from '@/services/book'
 import { messageError } from '@/utils/toast'
 import { memo, useEffect, useState } from 'react'
 import BookItem from './BookItem'
-import Loading from './Loading'
+import Loading from './Loading/Loading'
 
 const BookList = () => {
   const { searchInputValue } = useGlobal()
