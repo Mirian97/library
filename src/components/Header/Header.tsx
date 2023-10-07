@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import Button from '../Button'
+import Button from '../Button/Button'
 import Input from '../Input/Input'
 
 const Header = () => {

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import Button from '@/components/Button'
+import Button from '@/components/Button/Button'
 import DetailItem from '@/components/DetailItem'
 import Loading from '@/components/Loading/Loading'
 import Title from '@/components/Title/Title'
