@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import Button from '@/components/Button/Button'
-import DetailItem from '@/components/DetailItem'
+import DetailItem from '@/components/DetailItem/DetailItem'
 import Loading from '@/components/Loading/Loading'
 import Title from '@/components/Title/Title'
 import { defaultBookItem } from '@/constants/book'
