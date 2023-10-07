@@ -7,7 +7,7 @@ import IBook from '@/interfaces/IBook'
 import { getBooks } from '@/services/book'
 import { messageError } from '@/utils/toast'
 import { memo, useEffect, useState } from 'react'
-import BookItem from './BookItem'
+import BookItem from './BookItem/BookItem'
 import Loading from './Loading/Loading'
 
 const BookList = () => {
