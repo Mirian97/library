@@ -1,6 +1,6 @@
 const formatArrayToString = (array: string[], maxLength?: number) => {
   const string = array.join(', ')
-  if (maxLength && string.length >= maxLength) {
+  if (maxLength && maxLength > 0 && string.length >= maxLength) {
     return `${string.slice(0, maxLength)}...`
   }
   return string
