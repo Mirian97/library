@@ -1,4 +1,4 @@
-import { getBookImage } from './getBookImage'
+import getBookImage from './getBookImage'
 
 describe('getBookImage', () => {
   it('should return the thumbnail URL when imageLinks is provided', () => {
