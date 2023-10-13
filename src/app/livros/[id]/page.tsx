@@ -14,7 +14,7 @@ import {
   formatDate,
   removeHtmlTags
 } from '@/utils/formatters'
-import { getBookImage } from '@/utils/functions'
+import { getBookImage } from '@/utils/getBookImage/getBookImage'
 import { messageError } from '@/utils/toast/toast'
 import { ChevronLeftCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
