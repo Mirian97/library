@@ -15,7 +15,7 @@ import {
   removeHtmlTags
 } from '@/utils/formatters'
 import { getBookImage } from '@/utils/functions'
-import { messageError } from '@/utils/toast'
+import { messageError } from '@/utils/toast/toast'
 import { ChevronLeftCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
