@@ -5,11 +5,14 @@ module.exports = {
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
+    '!*.js',
     '!**/node_modules/**',
     '!<rootDir>/out/**',
     '!<rootDir>/.next/**',
     '!<rootDir>/*.config.js',
-    '!<rootDir>/coverage/**'
+    '!<rootDir>/coverage/**',
+    '!<rootDir>/src/constants/**',
+    '!<rootDir>/src/interfaces/**'
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)
