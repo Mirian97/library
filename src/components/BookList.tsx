@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { defaultBooks } from '@/constants/book'
-import useDebounce from '@/hooks/useDebounce'
+import useDebounce from '@/hooks/useDebounce/useDebounce'
 import useGlobal from '@/hooks/useGlobal'
 import IBook from '@/interfaces/IBook'
 import { getBooks } from '@/services/book'
