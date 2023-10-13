@@ -1,4 +1,4 @@
-const removeHtmlTags = (children: React.ReactNode) => {
+const removeHtmlTags = (children: React.ReactNode): string | undefined => {
   if (!children) return
   return children!
     .toString()
