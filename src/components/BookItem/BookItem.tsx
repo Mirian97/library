@@ -5,7 +5,7 @@ import getBookImage from '@/utils/getBookImage/getBookImage'
 import Link from 'next/link'
 import { memo } from 'react'
 
-const BookItem = ({ id, volumeInfo }: IBookItem) => {
+const BookItem = ({ id, volumeInfo }: Pick<IBookItem, 'id' | 'volumeInfo'>) => {
   const { title, authors, imageLinks } = volumeInfo
   const bookImage = getBookImage(imageLinks)
   return (
