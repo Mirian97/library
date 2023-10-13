@@ -1,6 +1,7 @@
 import IBookItem from '@/interfaces/IBookItem'
-import { formatArrayToString, formatString } from '@/utils/formatters'
-import { getBookImage } from '@/utils/getBookImage/getBookImage'
+import formatArrayToString from '@/utils/formatArrayToString/formatArrayToString'
+import formatString from '@/utils/formatString/formatString'
+import getBookImage from '@/utils/getBookImage/getBookImage'
 import Link from 'next/link'
 import { memo } from 'react'
 
