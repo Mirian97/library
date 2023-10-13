@@ -1,7 +1,7 @@
 import formatDate from './formatDate'
 
 describe('formatDate', () => {
-  it('should return pt-br date if a input is provided', () => {
+  it('should return PT-BR date if a string date is provided', () => {
     const date1 = '05/15/2023'
     const date2 = '01/01/2023'
     const date3 = '12/31/2023'
