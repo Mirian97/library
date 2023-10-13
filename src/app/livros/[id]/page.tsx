@@ -8,13 +8,9 @@ import Title from '@/components/Title/Title'
 import { defaultBookItem } from '@/constants/book'
 import IDetailBook from '@/interfaces/IDetailBook'
 import { getOneBook } from '@/services/book'
-import {
-  formatArrayToString,
-  formatBRLMoney,
-  formatDate,
-  removeHtmlTags
-} from '@/utils/formatters'
+import { formatArrayToString, formatBRLMoney, formatDate } from '@/utils/formatters'
 import { getBookImage } from '@/utils/getBookImage/getBookImage'
+import removeHtmlTags from '@/utils/removeHtmlTags/removeHtmlTags'
 import { messageError } from '@/utils/toast/toast'
 import { ChevronLeftCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'

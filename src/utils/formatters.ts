@@ -1,11 +1,3 @@
-export const removeHtmlTags = (children: React.ReactNode) => {
-  if (!children) return
-  return children!
-    .toString()
-    .replace(/(<([^>]+)>)/gi, '')
-    .replace(/&nbsp;/gi, ' ')
-}
-
 export const formatDate = (day: string) => {
   if (!day) return
   const options: Intl.DateTimeFormatOptions = {
