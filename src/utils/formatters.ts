@@ -1,8 +1,3 @@
-export const formatBRLMoney = (value: number) => {
-  if (!value) return
-  return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-}
-
 export const formatArrayToString = (array: string[], maxLength?: number) => {
   const string = array.join(', ')
   if (maxLength && string.length >= maxLength) {
