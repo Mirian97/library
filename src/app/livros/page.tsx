@@ -1,4 +1,4 @@
-import BookList from '@/components/BookList'
+import BookList from '@/components/BookList/BookList'
 import Title from '@/components/Title/Title'
 import { memo } from 'react'
 
