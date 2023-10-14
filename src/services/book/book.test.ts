@@ -2,7 +2,7 @@ import MockAdapter from 'axios-mock-adapter'
 import api from '../api/api'
 import { apiKey, getBooks, getOneBook } from './book'
 
-describe('Book Service', () => {
+describe('Book Requests', () => {
   let mock: MockAdapter
   const mockSucessResponse = { data: 'mock data' }
 
