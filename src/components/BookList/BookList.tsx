@@ -7,8 +7,8 @@ import IBook from '@/interfaces/IBook'
 import { getBooks } from '@/services/book/book'
 import { messageError } from '@/utils/toast/toast'
 import { memo, useEffect, useState } from 'react'
-import BookItem from './BookItem/BookItem'
-import Loading from './Loading/Loading'
+import BookItem from '../BookItem/BookItem'
+import Loading from '../Loading/Loading'
 
 const BookList = () => {
   const { searchInputValue } = useGlobal()
