@@ -1,5 +1,5 @@
-import api from './api'
-const apiKey = process.env.NEXT_PUBLIC_BOOKS_API_KEY
+import api from '../api/api'
+export const apiKey = process.env.NEXT_PUBLIC_BOOKS_API_KEY
 
 export const getBooks = async (searchTerm?: string) => {
   searchTerm = searchTerm || '%27%27'

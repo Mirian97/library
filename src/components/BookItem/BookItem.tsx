@@ -1,10 +1,11 @@
 import IBookItem from '@/interfaces/IBookItem'
-import { formatArrayToString, formatString } from '@/utils/formatters'
-import { getBookImage } from '@/utils/functions'
+import formatArrayToString from '@/utils/formatArrayToString/formatArrayToString'
+import formatString from '@/utils/formatString/formatString'
+import getBookImage from '@/utils/getBookImage/getBookImage'
 import Link from 'next/link'
 import { memo } from 'react'
 
-const BookItem = ({ id, volumeInfo }: IBookItem) => {
+const BookItem = ({ id, volumeInfo }: Pick<IBookItem, 'id' | 'volumeInfo'>) => {
   const { title, authors, imageLinks } = volumeInfo
   const bookImage = getBookImage(imageLinks)
   return (

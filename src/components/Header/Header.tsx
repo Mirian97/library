@@ -6,8 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import Button from './Button'
-import Input from './Input'
+import Button from '../Button/Button'
+import Input from '../Input/Input'
 
 const Header = () => {
   const { onChangeSearchInput } = useGlobal()

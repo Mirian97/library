@@ -1,21 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import Button from '@/components/Button'
-import DetailItem from '@/components/DetailItem'
-import Loading from '@/components/Loading'
-import Title from '@/components/Title'
+import Button from '@/components/Button/Button'
+import DetailItem from '@/components/DetailItem/DetailItem'
+import Loading from '@/components/Loading/Loading'
+import Title from '@/components/Title/Title'
 import { defaultBookItem } from '@/constants/book'
 import IDetailBook from '@/interfaces/IDetailBook'
-import { getOneBook } from '@/services/book'
-import {
-  formatArrayToString,
-  formatBRLMoney,
-  formatDate,
-  removeHtmlTags
-} from '@/utils/formatters'
-import { getBookImage } from '@/utils/functions'
-import { messageError } from '@/utils/toast'
+import { getOneBook } from '@/services/book/book'
+import formatArrayToString from '@/utils/formatArrayToString/formatArrayToString'
+import formatBRLMoney from '@/utils/formatBRLMoney/formatBRLMoney'
+import formatDate from '@/utils/formatDate/formatDate'
+import getBookImage from '@/utils/getBookImage/getBookImage'
+import removeHtmlTags from '@/utils/removeHtmlTags/removeHtmlTags'
+import { messageError } from '@/utils/toast/toast'
 import { ChevronLeftCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'

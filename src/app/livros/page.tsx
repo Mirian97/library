@@ -1,5 +1,5 @@
-import BookList from '@/components/BookList'
-import Title from '@/components/Title'
+import BookList from '@/components/BookList/BookList'
+import Title from '@/components/Title/Title'
 import { memo } from 'react'
 
 const Home = () => (
