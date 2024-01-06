@@ -16,6 +16,7 @@
     "dotenv": "^16.3.1",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.17.9",
     "lucide-react": "^0.263.1",
     "next": "13.4.12",
     "postcss": "8.4.27",
