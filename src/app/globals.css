@@ -34,7 +34,7 @@ body {
 
 .book-item {
   perspective: 1000px;
-  @apply bg-transparent w-[190px] h-[330px] text-white;
+  @apply bg-transparent w-[190px] h-[330px] text-white cursor-pointer;
 }
 
 .book-item-wrap {
