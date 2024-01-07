@@ -14,9 +14,11 @@ import formatDate from '@/utils/formatDate/formatDate'
 import getBookImage from '@/utils/getBookImage/getBookImage'
 import removeHtmlTags from '@/utils/removeHtmlTags/removeHtmlTags'
 import { messageError } from '@/utils/toast/toast'
+import { motion } from 'framer-motion'
 import { ChevronLeftCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { DETAIL_BOOK_MOTION_PROPS } from './constants'
 
 const DetailBook = ({ params: { id } }: IDetailBook) => {
   const [book, setBook] = useState(defaultBookItem)
@@ -67,16 +69,17 @@ const DetailBook = ({ params: { id } }: IDetailBook) => {
         <Loading className='mt-16 mx-auto' />
       ) : (
         <div className='grid grid-rows-[auto_1fr] gap-4 sm:grid-cols-[auto_1fr]'>
-          <img
+          <motion.img
+            {...DETAIL_BOOK_MOTION_PROPS}
             src={bookImage}
             alt='Imagem da capa do livro'
             className='m-auto sm:m-0 w-[250px] max-h-[380px] rounded-xl drop-shadow-xl'
           />
-          <div className='flex flex-col gap-2'>
+          <motion.div {...DETAIL_BOOK_MOTION_PROPS} className='flex flex-col gap-2'>
             {detailList.map((item) => (
               <DetailItem key={item.id} {...item} />
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
     </div>
