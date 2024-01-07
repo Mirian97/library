@@ -6,9 +6,22 @@ import useGlobal from '@/hooks/useGlobal'
 import IBook from '@/interfaces/IBook'
 import { getBooks } from '@/services/book/book'
 import { messageError } from '@/utils/toast/toast'
+import { motion } from 'framer-motion'
 import { memo, useEffect, useState } from 'react'
 import BookItem from '../BookItem/BookItem'
 import Loading from '../Loading/Loading'
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
 
 const BookList = () => {
   const { searchInputValue } = useGlobal()
@@ -33,11 +46,20 @@ const BookList = () => {
   }, [searchDebounced])
 
   return (
-    <div className='flex flex-wrap justify-center gap-6 mt-7'>
+    <div className='flex flex-wrap justify-center mt-7 mb-4'>
       {isLoadingBooks ? (
         <Loading className='mt-5' />
       ) : books.totalItems ? (
-        books.items.map((book) => <BookItem key={book.id} {...book} />)
+        <motion.div
+          variants={container}
+          initial='hidden'
+          animate='visible'
+          className='flex flex-wrap justify-center gap-6 max-w-[1200px]'
+        >
+          {books.items.map((book) => (
+            <BookItem key={book.id} {...book} />
+          ))}
+        </motion.div>
       ) : (
         <h5 className='text-lg'>Não há livros para o termo pesquisado</h5>
       )}
