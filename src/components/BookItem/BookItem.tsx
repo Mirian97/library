@@ -21,7 +21,12 @@ const BookItem = ({ id, volumeInfo }: Pick<IBookItem, 'id' | 'volumeInfo'>) => {
   const navigateToBookItem = () => router.push(`livros/${id}`)
 
   return (
-    <motion.div variants={item} onClick={navigateToBookItem} className='book-item'>
+    <motion.div
+      variants={item}
+      onClick={navigateToBookItem}
+      className='book-item'
+      data-testid='book-item'
+    >
       <div className='book-item-wrap'>
         <div className='book-item-front'>
           <div

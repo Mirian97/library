@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import BookItem from './BookItem'
 
 const volumeInfo = {
@@ -13,16 +13,24 @@ const volumeInfo = {
   description: 'Test description'
 }
 
+const mockPush = jest.fn()
+
+jest.mock('next/navigation', () => ({
+  ...jest.requireActual('next/navigation'),
+  useRouter: () => ({
+    push: mockPush
+  })
+}))
+
 const renderBookItem = () => render(<BookItem id='123' volumeInfo={volumeInfo} />)
 
 describe('BookItem', () => {
-  it('should render link container from BookItem correctly', () => {
-    const { getByRole, getByText } = renderBookItem()
-    const linkContainer = getByRole('link')
+  it('should render wrapper container from BookItem correctly', () => {
+    const { getByTestId, getByText } = renderBookItem()
+    const wrapperContainer = getByTestId(/book-item/i)
 
-    expect(linkContainer).toBeInTheDocument()
-    expect(linkContainer).toHaveClass('book-item')
-    expect(linkContainer).toHaveAttribute('href', 'livros/123')
+    expect(wrapperContainer).toBeInTheDocument()
+    expect(wrapperContainer).toHaveClass('book-item')
     expect(getByText(/veja mais/i)).toBeInTheDocument()
   })
 
@@ -36,5 +44,14 @@ describe('BookItem', () => {
     const { getByText } = renderBookItem()
     const bookAuthors = getByText(/Author 1, Author 2/i)
     expect(bookAuthors).toBeInTheDocument()
+  })
+
+  it('calls router push when clicked in container', () => {
+    const { getByTestId } = renderBookItem()
+    const bookItem = getByTestId(/book-item/i)
+
+    fireEvent.click(bookItem)
+    expect(mockPush).toHaveBeenCalled()
+    expect(mockPush).toHaveBeenCalledWith('livros/123')
   })
 })
