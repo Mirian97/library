@@ -10,8 +10,9 @@ module.exports = {
     '!<rootDir>/.next/**',
     '!<rootDir>/*.js',
     '!<rootDir>/coverage/**',
-    '!<rootDir>/src/constants/**',
-    '!<rootDir>/src/interfaces/**'
+    '!<rootDir>/src/interfaces/**',
+    '!**/*constants*/**',
+    '!**/*constants*.{js,jsx,ts,tsx}'
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)
@@ -26,8 +27,8 @@ module.exports = {
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/fileMock.js`,
 
     // Handle module aliases
-    '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/components/(.*)$': '<rootDir>/components/$1'
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
