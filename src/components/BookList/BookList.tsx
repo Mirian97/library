@@ -46,7 +46,7 @@ const BookList = () => {
   }, [searchDebounced])
 
   return (
-    <div className='flex flex-wrap justify-center mt-7 mb-4'>
+    <div className='flex flex-wrap justify-center mt-7 mb-4' data-testid='book-list'>
       {isLoadingBooks ? (
         <Loading className='mt-5' />
       ) : books.totalItems ? (
