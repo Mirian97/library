@@ -1,8 +1,13 @@
 import { ButtonHTMLAttributes } from 'react'
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   endIcon?: React.ReactNode
   variant?: 'contained' | 'plain'
+}
+
+const buttonClasses = {
+  contained: 'contained-button',
+  plain: 'plain-button'
 }
 
 const Button = ({
@@ -12,10 +17,6 @@ const Button = ({
   variant = 'contained',
   ...props
 }: IButton) => {
-  const buttonClasses = {
-    contained: 'contained-button',
-    plain: 'plain-button'
-  }
   return (
     <button {...props} className={`button ${buttonClasses[variant]} ${className}`}>
       {children}
