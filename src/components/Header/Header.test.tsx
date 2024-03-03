@@ -1,5 +1,5 @@
 import { GlobalProvider } from '@/contexts/GlobalContext'
-import '@testing-library/jest-dom'
+
 import { render } from '@testing-library/react'
 import Header from './Header'
 

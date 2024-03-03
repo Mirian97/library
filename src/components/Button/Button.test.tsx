@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { fireEvent, render } from '@testing-library/react'
 import { ChevronLeftCircle } from 'lucide-react'
 import Button, { IButton } from './Button'
