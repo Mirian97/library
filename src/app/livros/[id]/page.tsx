@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import Button from '@/components/Button/Button'
@@ -57,10 +56,10 @@ const DetailBook = ({ params: { id } }: IDetailBook) => {
       }
     }
     handleGetOneBook(id)
-  }, [])
+  }, [id])
 
   return (
-    <div className='pt-5 pb-10 relative'>
+    <div className='pt-5 pb-10 relative' data-testid='detail-book'>
       <Button variant='plain' className='absolute top-1 z-[1]' onClick={navigateToHome}>
         <ChevronLeftCircle color='#468189' size={36} />
       </Button>
