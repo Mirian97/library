@@ -1,4 +1,6 @@
+'use client'
 import Header from '@/components/Header/Header'
+import '@/config/i18n'
 import { GlobalProvider } from '@/contexts/GlobalContext'
 import IChildren from '@/interfaces/IChildren'
 import type { Metadata } from 'next'
